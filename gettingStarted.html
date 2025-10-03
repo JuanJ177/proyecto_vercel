@@ -3,67 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <title>Vercel — Getting Started</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #333;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      margin: 20px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
       text-align: center;
       color: #4CAF50;
-      margin-top: 20px;
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(45deg, #4CAF50, #45a049);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     h2 {
       color: #2196F3;
-      margin-top: 20px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(45deg, #2196F3, #21cbf3);
+      border-radius: 2px;
     }
 
     p {
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
+      color: #555;
+      text-align: justify;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+
+    .intro-p {
       text-align: center;
-      padding: 0 20px;
+      font-size: 18px;
     }
 
     ol {
       margin: 20px auto;
-      width: 80%;
+      width: 90%;
       font-size: 16px;
       line-height: 1.8;
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
     }
 
-    li {
-      margin-bottom: 10px;
+    ol li {
+      counter-increment: step-counter;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: rgba(33, 150, 243, 0.05);
+      border-left: 4px solid #2196F3;
+      border-radius: 0 10px 10px 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    ol li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 15px;
+      top: 20px;
+      background: #2196F3;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    ol li:hover {
+      background: rgba(33, 150, 243, 0.1);
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    ol li p {
+      margin: 0;
+      padding-left: 50px;
+      text-align: left;
+      color: #555;
     }
 
     a {
       color: #2196F3;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2196F3;
+      transition: width 0.3s ease;
     }
 
     a:hover {
       color: #4CAF50;
     }
+
+    a:hover::after {
+      width: 100%;
+      background: #4CAF50;
+    }
   </style>
 </head>
 <body>
-  <h1>Vercel — Getting Started</h1>
-  <p>Para iniciar un proyecto en Vercel se siguen pasos sencillos que integran GitHub, GitLab o Bitbucket.</p>
+  <div class="container">
+    <h1>Vercel — Getting Started</h1>
+    <p class="intro-p">Para iniciar un proyecto en Vercel se siguen pasos sencillos que integran GitHub, GitLab o Bitbucket.</p>
 
-  <h2>Pasos principales</h2>
-  <ol>
-    <li>Crear cuenta en <a href="https://vercel.com" target="_blank">Vercel</a> (gratis con GitHub).</li>
-    <li>Importar un repositorio existente o crear un nuevo proyecto.</li>
-    <li>Vercel detecta automáticamente el framework y configuración del proyecto.</li>
-    <li>Con un clic se despliega el sitio con un dominio gratuito (*.vercel.app).</li>
-  </ol>
+    <h2>Pasos principales</h2>
+    <ol>
+      <li><p>Crear cuenta en <a href="https://vercel.com" target="_blank">Vercel</a> (gratis con GitHub).</p></li>
+      <li><p>Importar un repositorio existente o crear un nuevo proyecto.</p></li>
+      <li><p>Vercel detecta automáticamente el framework y configuración del proyecto.</p></li>
+      <li><p>Con un clic se despliega el sitio con un dominio gratuito (*.vercel.app).</p></li>
+    </ol>
 
-  <p>Vercel ofrece integración continua: cada vez que haces un commit en tu repositorio, se genera una nueva versión desplegada automáticamente.</p>
+    <p>Vercel ofrece integración continua: cada vez que haces un commit en tu repositorio, se genera una nueva versión desplegada automáticamente.</p>
+  </div>
 </body>
 </html>
