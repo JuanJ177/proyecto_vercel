@@ -15,11 +15,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 800px;
       width: 90%;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
@@ -43,22 +43,25 @@
     }
 
     h1 {
-      color: #4CAF50;
       font-size: 2.5em;
       font-weight: 700;
       margin-bottom: 10px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       background: linear-gradient(45deg, #4CAF50, #45a049);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
+    h2, h3 {
+      margin-top: 25px;
+      color: #333;
+    }
+
     p {
       font-size: 18px;
       line-height: 1.7;
       color: #555;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       padding: 0 20px;
     }
 
@@ -116,6 +119,23 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
+
+    .cloud-section {
+      text-align: left;
+      margin-top: 30px;
+    }
+
+    .cloud-section ul {
+      text-align: left;
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .cloud-section ul li {
+      margin: 8px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -129,6 +149,37 @@
         <li><a href="gettingStarted.html">Getting Started</a></li>
       </ul>
     </nav>
+
+    <div class="cloud-section">
+      <h2>Resumen: Computación en la Nube</h2>
+      <p>
+        La computación en la nube es un modelo que permite acceder a recursos de TI como servidores,
+        almacenamiento, aplicaciones o servicios a través de internet, de forma flexible, escalable y bajo demanda.
+      </p>
+
+      <h3>Características esenciales</h3>
+      <ul>
+        <li>Autoservicio bajo demanda</li>
+        <li>Acceso amplio a la red</li>
+        <li>Recursos compartidos</li>
+        <li>Elasticidad rápida</li>
+        <li>Servicio medible</li>
+      </ul>
+
+      <h3>Modelos de servicio</h3>
+      <p><strong>SaaS:</strong> Aplicaciones listas para usar.  
+         <strong>PaaS:</strong> Plataformas para desarrollo y despliegue.  
+         <strong>IaaS:</strong> Infraestructura virtual como servidores y almacenamiento.</p>
+
+      <h3>Modelos de implementación</h3>
+      <p>Nube privada, pública, comunitaria e híbrida, según el alcance y la forma de despliegue.</p>
+
+      <h3>Beneficios</h3>
+      <p>
+        Reducción de costos, escalabilidad, acceso a tecnología de punta,
+        continuidad del negocio y enfoque estratégico en la misión de la organización.
+      </p>
+    </div>
   </div>
 </body>
 </html>
