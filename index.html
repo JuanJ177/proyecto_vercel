@@ -16,10 +16,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
+      padding-top: 20px;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       width: 90%;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
@@ -43,18 +44,56 @@
     }
 
     h1 {
+      color: #4CAF50;
       font-size: 2.5em;
       font-weight: 700;
       margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       background: linear-gradient(45deg, #4CAF50, #45a049);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    h2, h3 {
-      margin-top: 25px;
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      color: #2196F3;
+      font-size: 1.8em;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+      text-align: left;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(45deg, #2196F3, #21cbf3);
+      border-radius: 2px;
+    }
+
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
       color: #333;
+      font-size: 1.4em;
+      font-weight: 600;
+      text-align: left;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    h3::before {
+      content: '☁️';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2em;
     }
 
     p {
@@ -63,13 +102,21 @@
       color: #555;
       margin-bottom: 20px;
       padding: 0 20px;
+      text-align: justify;
+    }
+
+    .intro-p {
+      text-align: center;
+      font-size: 18px;
+      padding: 0;
     }
 
     nav {
       margin-top: 20px;
+      margin-bottom: 40px;
     }
 
-    ul {
+    ul.nav-ul {
       list-style-type: none;
       padding: 0;
       display: flex;
@@ -78,7 +125,7 @@
       flex-wrap: wrap;
     }
 
-    li {
+    li.nav-li {
       display: inline-block;
     }
 
@@ -125,28 +172,133 @@
       margin-top: 30px;
     }
 
-    .cloud-section ul {
-      text-align: left;
-      margin: 10px 0 0 20px;
+    .cloud-section ul.features-ul {
+      list-style-type: none;
       padding: 0;
+      margin: 0;
     }
 
-    .cloud-section ul li {
-      margin: 8px 0;
+    .cloud-section ul.features-ul li {
+      margin-bottom: 15px;
+      padding: 15px;
+      background: rgba(76, 175, 80, 0.05);
+      border-left: 4px solid #4CAF50;
+      border-radius: 0 10px 10px 0;
+      transition: all 0.3s ease;
+      position: relative;
       font-size: 16px;
-      line-height: 1.5;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .cloud-section ul.features-ul li::before {
+      content: '✅';
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+    }
+
+    .cloud-section ul.features-ul li:hover {
+      background: rgba(76, 175, 80, 0.1);
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .cloud-section ul.features-ul li span {
+      margin-left: 25px;
+      display: block;
+    }
+
+    .models-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .model-card {
+      background: rgba(33, 150, 243, 0.05);
+      border: 1px solid #2196F3;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .model-card::before {
+      content: '🔧';
+      font-size: 2em;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .model-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-color: #4CAF50;
+    }
+
+    .model-card strong {
+      color: #2196F3;
+      font-size: 1.2em;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .benefits-ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .benefits-ul li {
+      padding: 15px;
+      background: rgba(255, 193, 7, 0.1);
+      border-left: 4px solid #FFC107;
+      border-radius: 0 10px 10px 0;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      position: relative;
+    }
+
+    .benefits-ul li::before {
+      content: '⭐';
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+    }
+
+    .benefits-ul li:hover {
+      background: rgba(255, 193, 7, 0.2);
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefits-ul li span {
+      margin-left: 25px;
+      display: block;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Proyecto Clase</h1>
-    <p>Bienvenido, este es el proyecto de la segunda clase.</p>
+    <p class="intro-p">Bienvenido, este es el proyecto de la segunda clase.</p>
 
     <nav>
-      <ul>
-        <li><a href="supportedFrameworks.html">Supported Frameworks</a></li>
-        <li><a href="gettingStarted.html">Getting Started</a></li>
+      <ul class="nav-ul">
+        <li class="nav-li"><a href="supportedFrameworks.html">Supported Frameworks</a></li>
+        <li class="nav-li"><a href="gettingStarted.html">Getting Started</a></li>
       </ul>
     </nav>
 
@@ -158,27 +310,41 @@
       </p>
 
       <h3>Características esenciales</h3>
-      <ul>
-        <li>Autoservicio bajo demanda</li>
-        <li>Acceso amplio a la red</li>
-        <li>Recursos compartidos</li>
-        <li>Elasticidad rápida</li>
-        <li>Servicio medible</li>
+      <ul class="features-ul">
+        <li><span>Autoservicio bajo demanda</span></li>
+        <li><span>Acceso amplio a la red</span></li>
+        <li><span>Recursos compartidos</span></li>
+        <li><span>Elasticidad rápida</span></li>
+        <li><span>Servicio medible</span></li>
       </ul>
 
       <h3>Modelos de servicio</h3>
-      <p><strong>SaaS:</strong> Aplicaciones listas para usar.  
-         <strong>PaaS:</strong> Plataformas para desarrollo y despliegue.  
-         <strong>IaaS:</strong> Infraestructura virtual como servidores y almacenamiento.</p>
+      <div class="models-section">
+        <div class="model-card">
+          <strong>SaaS:</strong>
+          Aplicaciones listas para usar.
+        </div>
+        <div class="model-card">
+          <strong>PaaS:</strong>
+          Plataformas para desarrollo y despliegue.
+        </div>
+        <div class="model-card">
+          <strong>IaaS:</strong>
+          Infraestructura virtual como servidores y almacenamiento.
+        </div>
+      </div>
 
       <h3>Modelos de implementación</h3>
       <p>Nube privada, pública, comunitaria e híbrida, según el alcance y la forma de despliegue.</p>
 
       <h3>Beneficios</h3>
-      <p>
-        Reducción de costos, escalabilidad, acceso a tecnología de punta,
-        continuidad del negocio y enfoque estratégico en la misión de la organización.
-      </p>
+      <ul class="benefits-ul">
+        <li><span>Reducción de costos</span></li>
+        <li><span>Escalabilidad</span></li>
+        <li><span>Acceso a tecnología de punta</span></li>
+        <li><span>Continuidad del negocio</span></li>
+        <li><span>Enfoque estratégico en la misión de la organización</span></li>
+      </ul>
     </div>
   </div>
 </body>
